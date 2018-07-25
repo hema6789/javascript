@@ -10,28 +10,30 @@
                 var currymenu = ['Dal','Gobi Masala','Kaju Masala','Mushroom','Aloo Masala'];
 		var mainCourseItem;
                 var curryitem;
+                var menuItem;
+                menuItem = mainCourseItem && curryitem;
 		function goToParadise(mainItem,curry){
 			for(i = 0 ; i < mainCourseMenu.length; i = i + 1){
                         for(j = 0 ; j < currymenu.length; j = j + 1){
 					if((mainCourseMenu[i] == mainItem)&&(currymenu[j] ==curry)){
 							mainCourseItem = mainItem;
                                                         curryitem=curry;
-					}else{
-							mainCourseItem  = 'not available';
-                                                        curryitem = 'not available'
 					}
+                                        else{
+                                             menuItem = ' are not available';
+                                          }
 			}
                              }
                         
-			if((mainCourseItem!== 'not available')&&(curryitem!== 'not available')){
-				console.log(mainCourseItem + currys + ' are available');
-                                document.getElementById("item").innerHTML= mainCourseItem + curryitem + 'are available';
+			if(menuItem!== 'not available'){
+				console.log(menuItem + ' are available');
+                                document.getElementById("item").innerHTML= mainCourseItem + ' and ' + curryitem + ' are available';
 			}else{
                                 console.log(mainCourseItem  +  curryitem);
 				document.getElementById("item").innerHTML = mainCourseItem  + curryitem ;
 			}
 		}
-		goToParadise('rotijj','Daljj');
+		goToParadise('Roti','Dal');
 	</script>
 </body>
 </html>
